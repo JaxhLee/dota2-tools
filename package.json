@@ -10,16 +10,32 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:dota2-tools.helloWorld"
+		"onCommand:dota2-tools.kk"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "dota2-tools.helloWorld",
-				"title": "Hello World"
+				"command": "dota2-tools.create_t3_ability",
+				"title": "dota2-tools 创建技能文件t3"
+			},
+			{
+				"command": "dota2-tools.each",
+				"title": "dota2-tools kk"
 			}
-		]
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "dota2-tools.create_t3_ability",
+					"group": "dota2-tools"
+				},
+				{
+					"command": "dota2-tools.each",
+					"group": "dota2-tools"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
@@ -28,6 +44,10 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
 		"test": "node ./out/test/runTest.js"
+	},
+	"dependencies": {
+		"jsfiddle": "^1.1.7",
+		"rd": "^2.0.1"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.44.0",
